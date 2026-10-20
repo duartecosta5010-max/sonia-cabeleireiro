@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pedido enviado — Sónia Cabeleireiro</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <div class="card" style="margin-top:18px;">
+      <h1>Pedido enviado</h1>
+      <p id="pedido" style="margin-top:10px;"></p>
+      <p style="color:var(--muted);line-height:1.7;">
+        Aguardamos confirmação. Vais receber um email quando a marcação for aceite/recusada/remarcada.
+      </p>
+      <p style="margin-top:14px;">
+        <a class="btn btn-primary" href="/marcacoes.html">Fazer novo pedido</a>
+        <a class="btn btn-dark" href="/">Início</a>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const p = document.getElementById('pedido');
+    if (id) {
+      const pedidoNum = String(id).padStart(6, '0');
+      p.innerHTML = 'O teu pedido foi registado com o número <strong>#' + pedidoNum + '</strong>.';
+    } else {
+      p.textContent = 'O teu pedido foi registado.';
+    }
+  </script>
+</body>
+</html>

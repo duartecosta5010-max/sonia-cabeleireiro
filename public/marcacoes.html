@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcações Online — Sónia Cabeleireiro</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1 class="section-title">Marcações Online</h1>
+
+    <section class="card">
+      <p style="margin:0;color:var(--muted);line-height:1.7;">
+        Preenche o formulário para fazeres o teu pedido de marcação.
+        Vais receber email quando a marcação for aceite/recusada/remarcada.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>Pedido de marcação</h2>
+
+      <form method="post" action="/api/marcacao">
+        <div class="form-grid">
+          <div>
+            <label>Nome</label>
+            <input type="text" name="nome" required>
+          </div>
+
+          <div>
+            <label>Telemóvel</label>
+            <input type="text" name="telemovel" required>
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input type="email" name="email" required placeholder="ex.: nome@email.com">
+          </div>
+
+          <div>
+            <label>Serviço</label>
+            <select name="servico" required>
+              <option value="">-- escolher --</option>
+              <option>Corte</option>
+              <option>Brushing / Finalização</option>
+              <option>Coloração</option>
+              <option>Madeixas / Balayage</option>
+              <option>Tratamentos</option>
+              <option>Penteados / Eventos</option>
+            </select>
+          </div>
+
+          <div>
+            <label>Data pretendida</label>
+            <input type="date" name="data" required>
+          </div>
+
+          <div>
+            <label>Hora pretendida</label>
+            <input type="time" name="hora" required>
+          </div>
+
+          <div class="full">
+            <label>Observações</label>
+            <textarea name="obs" rows="4"></textarea>
+          </div>
+
+          <div class="full">
+            <button class="btn btn-primary" type="submit">Enviar pedido</button>
+          </div>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

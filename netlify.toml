@@ -1,0 +1,15 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/marcacao"
+  to = "/.netlify/functions/create_booking"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/marcacao-acao"
+  to = "/.netlify/functions/booking_action"
+  status = 200
+  force = true
